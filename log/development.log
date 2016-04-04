@@ -1,0 +1,3323 @@
+  [1m[36m (62.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (51.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160331081110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160331081110"]]
+  [1m[35m (81.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/rails/mailers/user_mailer/new_user" for 127.0.0.1 at 2016-03-31 15:20:32 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/new_user"}
+Completed 404 Not Found in 12ms
+
+AbstractController::ActionNotFound (Email 'new_user' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (5.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/wellcome" for 127.0.0.1 at 2016-03-31 15:20:48 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/wellcome"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'wellcome' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/wellcome_email" for 127.0.0.1 at 2016-03-31 15:20:55 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/wellcome_email"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'wellcome_email' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/welcome_email" for 127.0.0.1 at 2016-03-31 15:22:15 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome_email"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'welcome_email' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer" for 127.0.0.1 at 2016-03-31 15:22:26 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer"}
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer" for 127.0.0.1 at 2016-03-31 15:24:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer"}
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/user_mail_preview" for 127.0.0.1 at 2016-03-31 15:38:03 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/user_mail_preview"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'user_mail_preview' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/user_mail_preview" for 127.0.0.1 at 2016-03-31 15:40:33 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/user_mail_preview"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'user_mail_preview' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/user_mail_preview" for 127.0.0.1 at 2016-03-31 15:40:34 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/user_mail_preview"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'user_mail_preview' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/" for 127.0.0.1 at 2016-03-31 15:40:50 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer"}
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:40:53 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+UserMailer#welcome_email: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `email' for nil:NilClass):
+  app/mailers/user_mailer.rb:7:in `welcome_email'
+  test/mailers/previews/user_mailer_preview.rb:4:in `sample_mail_preview'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:42:35 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+
+UserMailer#welcome_email: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `email' for nil:NilClass):
+  app/mailers/user_mailer.rb:7:in `welcome_email'
+  test/mailers/previews/user_mailer_preview.rb:4:in `sample_mail_preview'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:43:11 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+UserMailer#welcome_email: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `email' for nil:NilClass):
+  app/mailers/user_mailer.rb:6:in `welcome_email'
+  test/mailers/previews/user_mailer_preview.rb:4:in `sample_mail_preview'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:43:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+UserMailer#welcome_email: processed outbound mail in 0.5ms
+Completed 500 Internal Server Error in 9ms
+
+NoMethodError (undefined method `email' for nil:NilClass):
+  app/mailers/user_mailer.rb:6:in `welcome_email'
+  test/mailers/previews/user_mailer_preview.rb:4:in `sample_mail_preview'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-03-31 08:47:26.404024"], ["email", "tanghoangphong1994@gmail.com"], ["name", "Phong"], ["updated_at", "2016-03-31 08:47:26.404024"]]
+  [1m[35m (53.8ms)[0m  commit transaction
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:47:29 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.5ms)
+  Rendered user_mailer/welcome_email.text.erb (0.3ms)
+
+UserMailer#welcome_email: processed outbound mail in 44.1ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (6.0ms)
+Completed 200 OK in 60ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:47:29 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.5ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 24ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fplain" for 127.0.0.1 at 2016-03-31 15:47:35 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 15.7ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:47:37 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 13.1ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fplain" for 127.0.0.1 at 2016-03-31 15:49:14 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.5ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:49:19 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.2ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fplain" for 127.0.0.1 at 2016-03-31 15:49:21 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.3ms)
+  Rendered user_mailer/welcome_email.text.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.1ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-03-31 15:57:52 +0700
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.7ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:57:57 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.4ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 24ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:57:57 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.1ms
+  Rendered text template (0.2ms)
+Completed 200 OK in 23ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:57:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.6ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.4ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:57:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.2ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 15:57:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.7ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.4ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 15:57:58 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 13.3ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:04:23 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.9ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:04:23 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.7ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:04:25 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.6ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.6ms)
+Completed 200 OK in 18ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:04:25 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.3ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 22.8ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:04:26 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.0ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:04:26 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.4ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:04:26 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.6ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.7ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 20ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:04:26 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.8ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fplain" for 127.0.0.1 at 2016-03-31 16:04:29 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.8ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/" for 127.0.0.1 at 2016-03-31 16:04:54 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer"}
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/" for 127.0.0.1 at 2016-03-31 16:04:58 +0700
+Processing by Rails::MailersController#index as HTML
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mailers/" for 127.0.0.1 at 2016-03-31 16:05:04 +0700
+
+ActionController::RoutingError (No route matches [GET] "/mailers"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.6ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:05:08 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.2ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:05:08 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 19.8ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview" for 127.0.0.1 at 2016-03-31 16:09:14 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 20.8ms
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/railties-4.1.0/lib/rails/templates/rails/mailers/email.html.erb (2.5ms)
+Completed 200 OK in 30ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/mailers/user_mailer/sample_mail_preview?part=text%2Fhtml" for 127.0.0.1 at 2016-03-31 16:09:14 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/sample_mail_preview"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 13.0ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/new" for 127.0.0.1 at 2016-03-31 16:13:08 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"new"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Mailer preview 'new' not found):
+  railties (4.1.0) lib/rails/mailers_controller.rb:52:in `find_preview'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:143:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:143:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/new" for 127.0.0.1 at 2016-03-31 16:13:18 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/new"}
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Email 'new' not found in UserMailerPreview):
+  railties (4.1.0) lib/rails/mailers_controller.rb:38:in `preview'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/user_mailer/new" for 127.0.0.1 at 2016-03-31 16:14:21 +0700
+
+ActionController::RoutingError (No route matches [GET] "/user_mailer/new"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/user_mailer/index" for 127.0.0.1 at 2016-03-31 16:16:18 +0700
+
+ActionController::RoutingError (No route matches [GET] "/user_mailer/index"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/nus/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2016-03-31 16:16:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=index):
+  app/controllers/users_controller.rb:71:in `set_user'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-03-31 16:17:16 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 606ms (Views: 605.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:17:17 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-03-31 16:17:27 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:17:52 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-03-31 09:17:52.907653"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:17:52.907653"]]
+  [1m[36m (99.3ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 104ms
+
+NoMethodError (undefined method `sample_email' for UserMailer:Class):
+  app/controllers/users_controller.rb:33:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:18:13 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-31 09:18:13.182451"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:18:13.182451"]]
+  [1m[35m (65.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 75ms
+
+NoMethodError (undefined method `wellcome_email' for UserMailer:Class):
+  app/controllers/users_controller.rb:33:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-03-31 09:18:39.445487"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:18:39.445487"]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 14.7ms
+
+Sent mail to tanghoangphong1994@gmail.com (18.9ms)
+Date: Thu, 31 Mar 2016 16:18:39 +0700
+From: notifications@example.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fceb6f84033_27ca1e533b819590@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fceb6f80361_27ca1e533b8194ce";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fceb6f80361_27ca1e533b8194ce
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Phong
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: .
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fceb6f80361_27ca1e533b8194ce
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Phong</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: .<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fceb6f80361_27ca1e533b8194ce--
+
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 110ms (ActiveRecord: 66.2ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:18:39 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:19:23 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:02 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:22:03 +0700
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-03-31 16:22:04 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-03-31 16:22:06 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:22:12 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-31 09:22:12.617346"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:22:12.617346"]]
+  [1m[35m (70.4ms)[0m  commit transaction
+  Rendered user_mailer/welcome_email.html.erb (0.5ms)
+
+UserMailer#welcome_email: processed outbound mail in 6.8ms
+Completed 500 Internal Server Error in 83ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    5:   </head>
+    6:   <body>
+    7:     <h1>Welcome to example.com, <%= @user.name %></h1>
+    8:     <p>
+    9:       You have successfully signed up to example.com,
+   10:       your username is: <%= @user.login %>.<br>
+  app/views/user_mailer/welcome_email.html.erb:7:in `_app_views_user_mailer_welcome_email_html_erb__118796404599961987_35897620'
+  app/mailers/user_mailer.rb:8:in `welcome_email'
+  app/controllers/users_controller.rb:33:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:23:12 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-03-31 09:23:12.322034"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:23:12.322034"]]
+  [1m[36m (62.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 70ms
+
+SyntaxError (/home/nus/mailer/app/mailers/user_mailer.rb:4: formal argument cannot be an instance variable
+  def welcome_email(@user)
+                         ^):
+  app/controllers/users_controller.rb:33:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/nus/.rvm/gems/ruby-2.1.1@phongth/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-31 09:23:51.042961"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:23:51.042961"]]
+  [1m[35m (65.6ms)[0m  commit transaction
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 11.9ms
+
+Sent mail to tanghoangphong1994@gmail.com (7.8ms)
+Date: Thu, 31 Mar 2016 16:23:51 +0700
+From: notifications@example.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fceca71e98f_27ca1fbb00c197ea@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fceca71d552_27ca1fbb00c196e5";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fceca71d552_27ca1fbb00c196e5
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Phong
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: PhongPhong.
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fceca71d552_27ca1fbb00c196e5
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Phong</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: PhongPhong.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fceca71d552_27ca1fbb00c196e5--
+
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 95ms (ActiveRecord: 66.2ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:23:51 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:23:53 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/7" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (60.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 62ms (ActiveRecord: 60.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:11 +0700
+
+
+Started DELETE "/users/6" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 6]]
+  [1m[36m (63.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 65ms (ActiveRecord: 63.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:13 +0700
+
+
+Started DELETE "/users/5" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (49.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 52ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:15 +0700
+
+
+Started DELETE "/users/4" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 4]]
+  [1m[36m (52.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 55ms (ActiveRecord: 52.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:17 +0700
+
+
+Started DELETE "/users/3" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (66.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 69ms (ActiveRecord: 67.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:18 +0700
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (54.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 56ms (ActiveRecord: 54.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:24:20 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-03-31 16:24:58 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-03-31 09:25:02.623468"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-03-31 09:25:02.623468"]]
+  [1m[36m (85.6ms)[0m  [1mcommit transaction[0m
+
+UserMailer#welcome_email: processed outbound mail in 4.4ms
+
+Sent mail to tanghoangphong1994@gmail.com (5.0ms)
+Date: Thu, 31 Mar 2016 16:25:02 +0700
+From: notifications@example.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fceceeaf5cf_27ca1ed08e0198ce@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+aaaa
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 101ms (ActiveRecord: 86.1ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:02 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:25:05 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/8/edit" for 127.0.0.1 at 2016-03-31 16:25:15 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/8" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Update User", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:25:16 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:25:18 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+
+UserMailer#welcome_email: processed outbound mail in 10.0ms
+
+Sent mail to tanghoangphong1994@gmail.com (3056.7ms)
+Date: Thu, 31 Mar 2016 16:33:46 +0700
+From: snow.wolf1305@gmail.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fceefad46e7_2e94483334965b0@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+aaaa
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-03-31 16:34:21 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Thoai", "email"=>"thoaivk@nustechnology.com", "login"=>"VKT"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-31 09:35:14.279132"], ["email", "thoaivk@nustechnology.com"], ["login", "VKT"], ["name", "Thoai"], ["updated_at", "2016-03-31 09:35:14.279132"]]
+  [1m[35m (81.4ms)[0m  commit transaction
+
+UserMailer#welcome_email: processed outbound mail in 5.1ms
+
+Sent mail to thoaivk@nustechnology.com (9.7ms)
+Date: Thu, 31 Mar 2016 16:35:14 +0700
+From: snow.wolf1305@gmail.com
+To: thoaivk@nustechnology.com
+Message-ID: <56fcef525a5f1_27ca1259a1c199ee@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+aaaa
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 102ms (ActiveRecord: 81.7ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:35:14 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:35:31 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2016-03-31 16:35:46 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-03-31 16:35:48 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-03-31 16:36:27 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-31 16:36:56 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Kien", "email"=>"kienpt@nustechnology.com", "login"=>"AHIHI"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-03-31 09:36:56.912067"], ["email", "kienpt@nustechnology.com"], ["login", "AHIHI"], ["name", "Kien"], ["updated_at", "2016-03-31 09:36:56.912067"]]
+  [1m[36m (101.1ms)[0m  [1mcommit transaction[0m
+
+UserMailer#welcome_email: processed outbound mail in 4.5ms
+
+Sent mail to kienpt@nustechnology.com (5.4ms)
+Date: Thu, 31 Mar 2016 16:36:57 +0700
+From: snow.wolf1305@gmail.com
+To: kienpt@nustechnology.com
+Message-ID: <56fcefb94fb5_27ca157bb3c200f0@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+aaaa
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 116ms (ActiveRecord: 101.5ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-31 16:36:57 +0700
+
+
+Started GET "/users/10" for 127.0.0.1 at 2016-04-01 08:23:37 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 243ms (Views: 214.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:38 +0700
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:43 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-04-01 08:23:47 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (94.0ms)
+  Rendered users/new.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 168ms (Views: 167.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-01 08:23:53 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-04-01 01:23:53.780107"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-04-01 01:23:53.780107"]]
+  [1m[35m (62.8ms)[0m  commit transaction
+
+UserMailer#welcome_email: processed outbound mail in 32.3ms
+
+Sent mail to tanghoangphong1994@gmail.com (3523.6ms)
+Date: Fri, 01 Apr 2016 08:23:53 +0700
+From: snow.wolf1305@gmail.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fdcda9e5340_dd02b5a1ec213a5@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+aaaa
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 3680ms (ActiveRecord: 63.2ms)
+
+
+Started GET "/users/11" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:23:57 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:24:13 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/8" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (64.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 69ms (ActiveRecord: 64.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:31:58 +0700
+
+
+Started DELETE "/users/9" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 9]]
+  [1m[36m (64.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 67ms (ActiveRecord: 64.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:00 +0700
+
+
+Started DELETE "/users/10" for 127.0.0.1 at 2016-04-01 08:32:01 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[35m (77.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 80ms (ActiveRecord: 77.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:32:01 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:01 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:01 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:01 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:02 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:02 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:02 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:02 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:02 +0700
+
+
+Started DELETE "/users/11" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 11]]
+  [1m[36m (63.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 66ms (ActiveRecord: 63.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:03 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-04-01 08:32:05 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-01 08:32:09 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-04-01 01:32:09.921025"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-04-01 01:32:09.921025"]]
+  [1m[36m (88.2ms)[0m  [1mcommit transaction[0m
+  Rendered user_mailer/welcome_email.html.erb (0.6ms)
+  Rendered user_mailer/welcome_email.text.erb (0.3ms)
+
+UserMailer#welcome_email: processed outbound mail in 43.6ms
+
+Sent mail to tanghoangphong1994@gmail.com (7924.6ms)
+Date: Fri, 01 Apr 2016 08:32:10 +0700
+From: snow.wolf1305@gmail.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fdcf9ae33f_dd0289c0b8215b8@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fdcf9ace7c_dd0289c0b82148e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fdcf9ace7c_dd0289c0b82148e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Phong
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: PhongPhong.
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fdcf9ace7c_dd0289c0b82148e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Phong</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: PhongPhong.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fdcf9ace7c_dd0289c0b82148e--
+
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 8063ms (ActiveRecord: 88.5ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2016-04-01 08:32:17 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:32:18 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:32:49 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-04-01 08:32:50 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-01 08:32:59 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Thoai", "email"=>"thoaivk@nustechnology.com", "login"=>"VKT"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-04-01 01:32:59.135889"], ["email", "thoaivk@nustechnology.com"], ["login", "VKT"], ["name", "Thoai"], ["updated_at", "2016-04-01 01:32:59.135889"]]
+  [1m[35m (110.3ms)[0m  commit transaction
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.1ms
+
+Sent mail to thoaivk@nustechnology.com (4017.7ms)
+Date: Fri, 01 Apr 2016 08:32:59 +0700
+From: snow.wolf1305@gmail.com
+To: thoaivk@nustechnology.com
+Message-ID: <56fdcfcb3fcc7_dd01f2a82c2172e@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fdcfcb3e852_dd01f2a82c21641";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fdcfcb3e852_dd01f2a82c21641
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Thoai
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: VKT.
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fdcfcb3e852_dd01f2a82c21641
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Thoai</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: VKT.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fdcfcb3e852_dd01f2a82c21641--
+
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 4144ms (ActiveRecord: 110.7ms)
+
+
+Started GET "/users/13" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:33:03 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:33:08 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-04-01 08:36:29 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-01 08:36:37 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Kien", "email"=>"kienpt@nustechnology.com", "login"=>"AHIHI"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-04-01 01:36:37.039608"], ["email", "kienpt@nustechnology.com"], ["login", "AHIHI"], ["name", "Kien"], ["updated_at", "2016-04-01 01:36:37.039608"]]
+  [1m[36m (102.8ms)[0m  [1mcommit transaction[0m
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.7ms
+
+Sent mail to kienpt@nustechnology.com (3850.8ms)
+Date: Fri, 01 Apr 2016 08:36:37 +0700
+From: snow.wolf1305@gmail.com
+To: kienpt@nustechnology.com
+Message-ID: <56fdd0a526e23_dd02966a342195a@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fdd0a5256f1_dd02966a34218e4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fdd0a5256f1_dd02966a34218e4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Kien
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: AHIHI.
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fdd0a5256f1_dd02966a34218e4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Kien</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: AHIHI.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fdd0a5256f1_dd02966a34218e4--
+
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 3971ms (ActiveRecord: 103.0ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 08:36:41 +0700
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 08:36:46 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/13" for 127.0.0.1 at 2016-04-01 09:14:04 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 13]]
+  [1m[36m (61.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 64ms (ActiveRecord: 61.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 09:14:04 +0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:04 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:04 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:05 +0700
+
+
+Started DELETE "/users/12" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (69.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 71ms (ActiveRecord: 69.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:07 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-04-01 09:14:08 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-01 09:14:13 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYvUPtlruRXhSvImSxmZ1FP1vwnYe5kJ6/++m839grE=", "user"=>{"name"=>"Phong", "email"=>"tanghoangphong1994@gmail.com", "login"=>"PhongPhong"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-04-01 02:14:13.094439"], ["email", "tanghoangphong1994@gmail.com"], ["login", "PhongPhong"], ["name", "Phong"], ["updated_at", "2016-04-01 02:14:13.094439"]]
+  [1m[35m (90.6ms)[0m  commit transaction
+  Rendered user_mailer/welcome_email.html.erb (0.1ms)
+  Rendered user_mailer/welcome_email.text.erb (0.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 12.3ms
+
+Sent mail to tanghoangphong1994@gmail.com (3602.6ms)
+Date: Fri, 01 Apr 2016 09:14:13 +0700
+From: snow.wolf1305@gmail.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <56fdd97530d3e_dd03fa3d003628c221d0@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56fdd9752f99f_dd03fa3d003628c220ac";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56fdd9752f99f_dd03fa3d003628c220ac
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Phong
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: PhongPhong.
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_56fdd9752f99f_dd03fa3d003628c220ac
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Phong</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: PhongPhong.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_56fdd9752f99f_dd03fa3d003628c220ac--
+
+Redirected to http://localhost:3000/users/15
+Completed 302 Found in 3709ms (ActiveRecord: 90.8ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-04-01 09:14:16 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDelayedJobs (20160404090322)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "queue" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160404090322"]]
+  [1m[36m (62.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='delayed_jobs_priority' AND type='index'
+[0m
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+UserMailer#send_email: processed outbound mail in 0.3ms
+
+UserMailer#send_email: processed outbound mail in 0.2ms
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/welcome_email.html.erb (1.3ms)
+  Rendered user_mailer/welcome_email.text.erb (0.3ms)
+
+UserMailer#welcome_email: processed outbound mail in 84.1ms
+
+Sent mail to tanghoangphong1994@gmail.com (3942.4ms)
+Date: Mon, 04 Apr 2016 16:15:20 +0700
+From: snow.wolf1305@gmail.com
+To: tanghoangphong1994@gmail.com
+Message-ID: <570230a8a4a4a_2adc50d32c6307f@nus-desktop.mail>
+Subject: Hello!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_570230a8a2a44_2adc50d32c62911";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_570230a8a2a44_2adc50d32c62911
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Phong
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: .
+ 
+To login to the site, just follow this link: .
+ 
+Thanks for joining and have a great day!
+----==_mimepart_570230a8a2a44_2adc50d32c62911
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Phong</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: .<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: .
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_570230a8a2a44_2adc50d32c62911--
+
+
+UserMailer#send_email: processed outbound mail in 4027.6ms
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "delayed_jobs" ("created_at", "handler", "run_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-04-04 09:16:26.736187"], ["handler", "--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'UserMailer'\nmethod_name: :send_email\nargs:\n- !ruby/object:User\n  attributes:\n    id: 1\n    name: Phong\n    email: tanghoangphong1994@gmail.com\n    login: \n    created_at: 2016-03-31 08:47:26.404024000 Z\n    updated_at: 2016-03-31 08:47:26.404024000 Z\n"], ["run_at", "2016-04-04 09:16:26.736038"], ["updated_at", "2016-04-04 09:16:26.736187"]]
+  [1m[35m (51.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "delayed_jobs" ("created_at", "handler", "run_at", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2016-04-04 09:18:31.887156"], ["handler", "--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'UserMailer'\nmethod_name: :send_email\nargs:\n- !ruby/object:User\n  attributes:\n    id: 1\n    name: Phong\n    email: tanghoangphong1994@gmail.com\n    login: \n    created_at: 2016-03-31 08:47:26.404024000 Z\n    updated_at: 2016-03-31 08:47:26.404024000 Z\n"], ["run_at", "2016-04-04 09:18:31.887066"], ["updated_at", "2016-04-04 09:18:31.887156"]]
+  [1m[36m (60.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "delayed_jobs" ("created_at", "handler", "run_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-04-04 09:29:35.519562"], ["handler", "--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'UserMailer'\nmethod_name: :send_email\nargs:\n- !ruby/object:User\n  attributes:\n    id: 1\n    name: Phong\n    email: tanghoangphong1994@gmail.com\n    login: \n    created_at: 2016-03-31 08:47:26.404024000 Z\n    updated_at: 2016-03-31 08:47:26.404024000 Z\n"], ["run_at", "2016-04-04 09:30:35.518164"], ["updated_at", "2016-04-04 09:29:35.519562"]]
+  [1m[35m (62.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "delayed_jobs" ("created_at", "handler", "run_at", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2016-04-04 09:31:28.407617"], ["handler", "--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'UserMailer'\nmethod_name: :send_email\nargs:\n- !ruby/object:User\n  attributes:\n    id: 1\n    name: Phong\n    email: tanghoangphong1994@gmail.com\n    login: \n    created_at: 2016-03-31 08:47:26.404024000 Z\n    updated_at: 2016-03-31 08:47:26.404024000 Z\n"], ["run_at", "2016-04-04 09:32:28.406232"], ["updated_at", "2016-04-04 09:31:28.407617"]]
+  [1m[36m (48.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddQueueToDelayedJobs (20160404095237)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "delayed_jobs" ADD "queue" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: queue: ALTER TABLE "delayed_jobs" ADD "queue" varchar(255)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (67.5ms)[0m  [1mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "queue" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (51.2ms)[0m  [1mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35m (51.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (175.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (51.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (51.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160404090322')
+  [1m[36m (51.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160331081110')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddQueueToDelayedJobs (20160404095237)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "delayed_jobs" ADD "queue" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: queue: ALTER TABLE "delayed_jobs" ADD "queue" varchar(255)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "delayed_jobs" ("created_at", "handler", "run_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-04-04 09:55:08.113746"], ["handler", "--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'UserMailer'\nmethod_name: :send_email\nargs:\n- \n"], ["run_at", "2016-04-04 09:55:08.113555"], ["updated_at", "2016-04-04 09:55:08.113746"]]
+  [1m[35m (57.8ms)[0m  commit transaction
